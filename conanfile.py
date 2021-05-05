@@ -4,7 +4,7 @@ import os
 
 class EventbusConan(ConanFile):
     name = "eventbus"
-    version = "3.0.0"
+    version = "3.0.0-r1"
     generators = "cmake"
     settings = {"os": None, "arch": ["x86_64", "x86"], "compiler": None, "build_type": None}
 

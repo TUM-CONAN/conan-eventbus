@@ -4,7 +4,7 @@ import os
 
 class EventbusConan(ConanFile):
     name = "eventbus"
-    version = "3.0.0-r1"
+    version = "3.0.0-r2"
     generators = "cmake"
     settings = {"os": None, "arch": ["x86_64", "x86"], "compiler": None, "build_type": None}
 
@@ -20,7 +20,7 @@ class EventbusConan(ConanFile):
     scm = {
         "type": "git",
         "subfolder": "sources",
-        "url": "https://github.com/ulricheck/EventBus.git",
+        "url": "https://github.com/TUM-CAMP-NARVIS/EventBus",
         "revision": "v%s" % version,
     }
 

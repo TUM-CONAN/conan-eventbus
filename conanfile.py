@@ -4,7 +4,7 @@ import os
 
 class EventbusConan(ConanFile):
     name = "eventbus"
-    version = "3.0.0-r2"
+    version = "3.0.0-r3"
     generators = "cmake"
     settings = {"os": None, "arch": ["x86_64", "x86"], "compiler": None, "build_type": None}
 
@@ -21,7 +21,8 @@ class EventbusConan(ConanFile):
         "type": "git",
         "subfolder": "sources",
         "url": "https://github.com/TUM-CAMP-NARVIS/EventBus",
-        "revision": "v%s" % version,
+        "revision": "ueck_feature_windows_dll_export",
+        # "revision": "v%s" % version,
     }
 
     def _cmake_configure(self):
@@ -34,8 +35,8 @@ class EventbusConan(ConanFile):
     def build(self):
         #disable building usecases
         tools.replace_in_file(os.path.join("sources", "CMakeLists.txt"),
-            """add_subdirectory(use_case/)""",
-            """#add_subdirectory(use_case/)""")
+            """add_subdirectory(use_case)""",
+            """#add_subdirectory(use_case)""")
 
         cmake = self._cmake_configure()
         cmake.build()

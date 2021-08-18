@@ -4,7 +4,7 @@ import os
 
 class EventbusConan(ConanFile):
     name = "eventbus"
-    version = "3.0.1-r1"
+    version = "3.0.0-r2"
     generators = "cmake"
     settings = {"os": None, "arch": ["x86_64", "x86"], "compiler": None, "build_type": None}
 
@@ -17,13 +17,10 @@ class EventbusConan(ConanFile):
     license = "Licensed under the Apache License, Version 2.0"
     description = "Simple and very fast event bus."
 
-    scm = {
-        "type": "git",
-        "subfolder": "sources",
-        "url": "https://github.com/TUM-CAMP-NARVIS/EventBus",
-        "revision": "ueck_feature_windows_dll_export",
-        # "revision": "v%s-camposs" % version,
-    }
+    scm = {"revision": "v3.0.0-r2",
+           "subfolder": "sources",
+           "type": "git",
+           "url": "https://github.com/TUM-CAMP-NARVIS/EventBus"}
 
     def _cmake_configure(self):
         cmake = CMake(self)
